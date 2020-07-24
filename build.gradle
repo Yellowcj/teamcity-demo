@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven{ url('https://maven.aliyun.com/repository/google/')}
+    maven{ url('https://maven.aliyun.com/repository/jcenter/')}
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    //SpringBoot version control
+    implementation platform(group: 'org.springframework.boot', name: 'spring-boot-dependencies', version: springBootVersion)
+
+    //Web of SpringBoot
+    implementation(group: 'org.springframework.boot', name: 'spring-boot-starter-web')
+}
